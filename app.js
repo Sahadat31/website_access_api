@@ -13,7 +13,7 @@ app.use(express.json())
 
 // mounting the routers
 app.use('/api/v1/analysis',analysisRouter)
-app.use('/api/v1/users',userRouter)
+app.use('/api/v1/user',userRouter)
 
 // if till now no route handlers catches it then its an undefined route
 app.all('*',(req,res,next)=> {
