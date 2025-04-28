@@ -27,12 +27,17 @@ const signup = async(req,res,next) => {
             data: {
                 user: {
                     id: newUser.id,
-                    name: newUser.email
+                    name: newUser.name,
+                    email: newUser.email
                 }
             }
         })
     } catch(err) {
-        return next(new AppError(err.message,409))
+        if (err.code === 11000) {
+            return next(new AppError('User already exists',409))
+        } else {
+            return next(new AppError(err.message,409))
+        }  
     }
 }
 
