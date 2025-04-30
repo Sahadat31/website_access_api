@@ -19,7 +19,9 @@ const scanWebsite = async(req,res,next) => {
             browser, // use the same Puppeteer instance
             page,    // use current page context
             standard: 'WCAG2AA',
-            timeout: 30000
+            timeout: 30000,
+            includeNotices: true,
+            includeNotices: true
         });
     
         console.log(`Accessibility results for: ${url}`);
