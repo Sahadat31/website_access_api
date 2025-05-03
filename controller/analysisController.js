@@ -21,7 +21,7 @@ const scanWebsite = async(req,res,next) => {
             standard: 'WCAG2AA',
             timeout: 30000,
             includeNotices: true,
-            includeNotices: true
+            includeWarnings: true
         });
     
         console.log(`Accessibility results for: ${url}`);
