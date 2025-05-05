@@ -54,6 +54,7 @@ const scanWebsite = async(req,res,next) => {
         res.status(200).json({
             status: 'Success',
             data: {
+                id: saved_analytics._id,
                 issues: saved_analytics.issues
             }
         })
